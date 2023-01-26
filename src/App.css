@@ -1,38 +1,123 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-header {
   text-align: center;
+  background-color: #3b5998;
+  color: white;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  margin-top: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.room {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.room label {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.room input {
+  width: 200px;
+  height: 30px;
+  border: 2px solid #3b5998;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+}
+.btn{
+  width: 210px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  background-color: #3b5998;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.normal-text{
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.room button {
+  width: 210px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  background-color: #3b5998;
+  color: white;
+  cursor: pointer;
+}
+
+.sign-out {
+  margin-top: 50px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+/* .navbar{
+  display: flex;
+} */
+
+li{
+  display:inline;
+  padding: 4px;
+}
+
+.app-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  color: var(--primary-light);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bottom{
+  display: flex;
+  justify-content: center;
 }
