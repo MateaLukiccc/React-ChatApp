@@ -14,13 +14,16 @@ body {
 
 .app-header {
   text-align: center;
-  background-color: #3b5998;
+  background-color:   #1F2937;
   color: white;
   width: 100%;
+  display: flex;
+  align-items: stretch;
 }
 
 .app-container {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  width: 100%;
 }
 
 .room {
@@ -56,6 +59,7 @@ body {
   background-color: #3b5998;
   color: white;
   cursor: pointer;
+  
 }
 
 .normal-text{
@@ -120,4 +124,32 @@ li{
 .bottom{
   display: flex;
   justify-content: center;
+}
+
+.navbar-links{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.navbar-links:hover{
+  opacity: 0.8;
+  color: lightseagreen;
+  
+}
+
+.navbar-links:active{
+  opacity: 0.5;
+  
+}
+
+.signIn-btn:hover{
+  box-shadow: 7px 7px 12px rgba(0,0,0,0.15);
+  color: lightseagreen;
+  background-color: aliceblue;
+
+}
+
+.signIn-btn:active{
+  opacity: 0.5;
 }

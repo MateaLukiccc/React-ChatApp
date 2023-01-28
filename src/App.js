@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Chat } from "./components/Chat";
-import { Auth } from "./components/Auth.js";
+import SubMenu from './components/SubMenu'
 import { AppWrapper } from "./components/AppWrapper";
 import Cookies from "universal-cookie";
 import "./App.css";
@@ -19,7 +19,8 @@ function ChatApp() {
         setIsAuth={setIsAuth}
         setIsInChat={setIsInChat}
       >
-        <Auth setIsAuth={setIsAuth} />
+        {/* <Home setIsAuth={setIsAuth} /> */}
+        <SubMenu setIsAuth={setIsAuth}/>
       </AppWrapper>
     );
   }
