@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // pages
 import LoginPage from './Home';
 import About from './About';
-import Contact from './Contact';
+import Contact from './ContactA2.js';
 import Error from './Error';
 import Person from './Person';
 // navbar

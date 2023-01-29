@@ -1,0 +1,24 @@
+.contents{
+    height:100vh;
+}
+
+.text-contents{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 5px 15px;
+    transform: translate(-50%,-50%);
+    background: #f7601b;
+    color: aliceblue;
+    border-radius: 20px;
+    font-size: 50px;
+}
+
+.about-footer {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 24px 0px;
+    align-self: stretch;
+    background:  #1F2937;
+}

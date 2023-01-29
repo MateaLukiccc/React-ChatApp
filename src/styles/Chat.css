@@ -3,14 +3,14 @@
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     border-radius: 5px;
     overflow: hidden;
-    border: 2px solid #3b5998;
+    border: 2px solid aliceblue;
   }
   .header {
-    background-color: #3b5998;
+    background-color: #f7601b;
     color: white;
     width: 100%;
     text-align: center;
@@ -36,7 +36,11 @@
   .user {
     font-weight: bold;
     margin-right: 10px;
-    color: #333;
+    color: #f7601b;
+  }
+
+  .texts{
+    color: aliceblue;
   }
   
   .new-message-form {
@@ -51,7 +55,7 @@
     outline: none;
     background: transparent;
     font-size: 16px;
-    color: #333;
+    color: aliceblue;
     padding: 10px;
     border-radius: 5px 0 0 5px;
   }
@@ -59,8 +63,13 @@
   .send-button {
     border: none;
     outline: none;
-    background: #3b5998;
+    background: green;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
+  }
+
+  .send-button:hover{
+    color: green;
+    background-color: white;
   }

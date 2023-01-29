@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { db, auth } from "../firebase-config";
 import {
   collection,
@@ -51,6 +51,17 @@ export const Chat = ({ room }) => {
     setNewMessage("");
   };
 
+  
+  const inputRef = useRef(null) //now the input will be in focus
+
+  useEffect(()=>{
+    if(!document.getElementById('input')){
+      return
+    }else{
+      inputRef.current.focus()
+    }
+  },[])
+
   return (
     <div className="chat-app">
       <div className="header">
@@ -59,17 +70,19 @@ export const Chat = ({ room }) => {
       <div className="messages">
         {messages.map((message) => (
           <div key={message.id} className="message">
-            <span className="user">{message.user}:</span> {message.text}
+            <span className="user">{auth.currentUser.displayName===message.user ? 'You' : message.user}:</span> <span className="texts">{message.text}</span>
           </div>
         ))}
       </div>
       <form onSubmit={handleSubmit} className="new-message-form">
         <input
           type="text"
+          id = 'input'
           value={newMessage}
           onChange={(event) => setNewMessage(event.target.value)}
           className="new-message-input"
           placeholder="Type your message here..."
+          ref={inputRef}
         />
         <button type="submit" className="send-button">
           Send
