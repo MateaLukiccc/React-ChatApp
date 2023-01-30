@@ -5,7 +5,7 @@ const Navbar = () => {
   <div className="app-header">
     <h1> Chat App </h1>
     <nav>
-    <ul>
+    <ul className='navigation'>
       <li>
         <Link to="/" className='navbar-links'>Home</Link>
       </li>

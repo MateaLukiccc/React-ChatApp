@@ -22,6 +22,11 @@ body {
   align-items: stretch;
 }
 
+.navigation{
+  display: flex;
+  gap: 50px;
+}
+
 .app-container {
   /* margin-top: 50px; */
   width: 100%;
