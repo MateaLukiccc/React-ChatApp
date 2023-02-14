@@ -7,13 +7,19 @@ import {
 } from "firebase/firestore";
 
 import Cookies from "universal-cookie";
+import {useDispatch} from 'react-redux';
+import { decrement } from "../actions";
 
 const cookies = new Cookies();
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
+
 export const AppWrapper = ({ children, isAuth, setIsAuth, setIsInChat, room }) => {
   const messagesRef = collection(db, "messages");
+  //const counter = useSelector(state =>state.counter)
+  const dispatch = useDispatch()
   const signUserOut = async () => {
+    dispatch(decrement())
     addDoc(messagesRef, {
       text: auth.currentUser.displayName+" left the chat",
       createdAt: serverTimestamp(),
@@ -26,6 +32,7 @@ export const AppWrapper = ({ children, isAuth, setIsAuth, setIsInChat, room }) =
     setIsAuth(false);
     setIsInChat(false);
   };
+  
 
   return (
     <div className="App">
