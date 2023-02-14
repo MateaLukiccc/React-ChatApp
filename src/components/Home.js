@@ -8,20 +8,14 @@ import reactImage from '../images/react.png'
 import reduxImage from '../images/redux.png'
 import JsImage from '../images/js.png'
 import FirebaseImage from '../images/firebase.webp'
-import {useSelector, useDispatch} from 'react-redux';
-import { increment } from "../actions";
 
 const cookies = new Cookies();
 const Home = ({ setIsAuth }) => {
-    const counter = useSelector(state =>state.counter)
-    const dispatch = useDispatch()
-    //const dispatch = useDispatch()
     const signInWithGoogle = async () => {
         try {
           const result = await signInWithPopup(auth, provider);
           cookies.set("auth-token", result.user.refreshToken);
           setIsAuth(true);
-          dispatch(increment())
         } catch (err) {
           console.error(err);
         }
@@ -32,7 +26,6 @@ const Home = ({ setIsAuth }) => {
         <div className="intro">
             <div className="intro-text">
                 <h1>Welcome back!</h1>
-                <p className='sidekick-text'>Currently online: {counter}</p>
                 <p className="sidekick-text">Start easy and quick by signing in with your Google account</p>
                 <button className="sign-up" onClick={signInWithGoogle}>Sign up</button>
             </div>
