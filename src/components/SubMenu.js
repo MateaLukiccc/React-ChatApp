@@ -6,7 +6,6 @@ import LoginPage from './Home';
 import About from './About';
 import Contact from './ContactA2.js';
 import Error from './Error';
-import Person from './Person';
 // navbar
 import Navbar from './Navbar';
 const ReactRouterSetup = ({setIsAuth}) => {
@@ -16,7 +15,6 @@ const ReactRouterSetup = ({setIsAuth}) => {
       <Route exact path="/"element={<LoginPage setIsAuth={setIsAuth}/>}/>
       <Route exact path="/About" element={<About/>}/>
       <Route exact path="/Contact" element={<Contact/>}/>
-      <Route exact path="/person/:id" element={<Person/>}/>
       <Route path='*' element={<Error/>}/>
     </Routes>
   </Router>;

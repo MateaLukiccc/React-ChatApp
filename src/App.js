@@ -10,13 +10,16 @@ import {
   collection
 } from "firebase/firestore";
 import { db, auth } from "./firebase-config";
+import {useSelector, useDispatch} from 'react-redux'
+import { joinedChat } from "./actions";
 
 const cookies = new Cookies()
 
 function ChatApp() {
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"))
-  const [isInChat, setIsInChat] = useState(null)
   const [room, setRoom] = useState("")
+  const isInChat = useSelector(state => state.inChat)
+  const dispatch = useDispatch()
 
   const messagesRef = collection(db, "messages");
 
@@ -25,7 +28,7 @@ function ChatApp() {
       <AppWrapper
         isAuth={isAuth}
         setIsAuth={setIsAuth}
-        setIsInChat={setIsInChat}
+        setIsInChat={isInChat}
       >
         {/* <Home setIsAuth={setIsAuth} /> */}
         <SubMenu setIsAuth={setIsAuth}/>
@@ -43,10 +46,10 @@ function ChatApp() {
   }
 
   return (
-    <AppWrapper isAuth={isAuth} setIsAuth={setIsAuth} setIsInChat={setIsInChat} room={room}>
+    <AppWrapper isAuth={isAuth} setIsAuth={setIsAuth} room={room}>
       {!isInChat ? (
         <div className="room">
-          <form onSubmit={() => {setIsInChat(true);joined()}}>
+          <form onSubmit={() => {dispatch(joinedChat());joined()}}>
           <label> Type room name: </label>
           <input id='input' onChange={(e) => {setRoom(e.target.value)}}/>
           <button type='submit' className="chat-button">Enter Chat</button>
